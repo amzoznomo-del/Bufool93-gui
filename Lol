@@ -1,0 +1,359 @@
+-- Bufool930 gui v1 F3x
+-- Gui make by @Tobous93
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- สร้าง ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "Bufool930Gui"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+-- กรอบหลัก (Main Frame)
+local mainFrame = Instance.new("Frame")
+mainFrame.Name = "MainFrame"
+mainFrame.Size = UDim2.new(0, 500, 0, 360)
+mainFrame.Position = UDim2.new(0.5, -250, 0.5, -180)
+mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+mainFrame.BorderColor3 = Color3.fromRGB(255, 255, 0)
+mainFrame.BorderSizePixel = 3
+mainFrame.Active = true
+mainFrame.Draggable = true
+mainFrame.Parent = screenGui
+
+-- แถบหัวข้อบน (Top Bar Header)
+local topBar = Instance.new("TextLabel")
+topBar.Name = "TopBar"
+topBar.Size = UDim2.new(1, 12, 0, 38)
+topBar.Position = UDim2.new(0, -6, 0, -38)
+topBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+topBar.BorderColor3 = Color3.fromRGB(255, 255, 0)
+topBar.BorderSizePixel = 3
+topBar.TextColor3 = Color3.fromRGB(255, 255, 0)
+topBar.TextSize = 22
+topBar.Font = Enum.Font.SourceSansBold
+topBar.Text = "Bufool930 gui v1  F3x (Tobous93)"
+topBar.Parent = mainFrame
+
+-- พื้นหลังรูปภาพตรงกลาง (Background Image)
+local bgImage = Instance.new("ImageLabel")
+bgImage.Name = "BgImage"
+bgImage.Size = UDim2.new(1, 0, 1, 0)
+bgImage.Position = UDim2.new(0, 0, 0, 0)
+bgImage.BackgroundTransparency = 1
+bgImage.Image = "rbxassetid://104480379284704"
+bgImage.ScaleType = Enum.ScaleType.Stretch
+bgImage.Parent = mainFrame
+
+-- แถบเครดิตล่าง (Bottom Bar Footer)
+local bottomBar = Instance.new("TextLabel")
+bottomBar.Name = "BottomBar"
+bottomBar.Size = UDim2.new(1, 12, 0, 32)
+bottomBar.Position = UDim2.new(0, -6, 1, 6)
+bottomBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+bottomBar.BorderColor3 = Color3.fromRGB(255, 255, 0)
+bottomBar.BorderSizePixel = 3
+bottomBar.TextColor3 = Color3.fromRGB(255, 255, 0)
+bottomBar.TextSize = 18
+bottomBar.Font = Enum.Font.SourceSansBold
+bottomBar.Text = "Gui make by  @Tobous93"
+bottomBar.Parent = mainFrame
+
+-- ฟังก์ชันสร้างปุ่มกด
+local function createButton(name, text, size, position)
+	local btn = Instance.new("TextButton")
+	btn.Name = name
+	btn.Size = size
+	btn.Position = position
+	btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	btn.BorderColor3 = Color3.fromRGB(255, 255, 0)
+	btn.BorderSizePixel = 2
+	btn.TextColor3 = Color3.fromRGB(255, 255, 0)
+	btn.TextSize = 16
+	btn.Font = Enum.Font.SourceSansBold
+	btn.Text = text
+	btn.Parent = mainFrame
+	return btn
+end
+
+-- ==========================================
+-- การวางตำแหน่งปุ่มตามตำแหน่งในภาพตัวอย่าง
+-- ==========================================
+
+-- แถวที่ 1 (ด้านบน)
+local btnR6 = createButton("R6", "R6", UDim2.new(0, 48, 0, 42), UDim2.new(0, 10, 0, 12))
+local btnR15 = createButton("R15", "R15", UDim2.new(0, 58, 0, 42), UDim2.new(0, 68, 0, 12))
+local btnRe = createButton("Re", "Re", UDim2.new(0, 48, 0, 42), UDim2.new(0, 136, 0, 12))
+local btnTheme = createButton("PlayTheme", "Play Theme\nTobous93", UDim2.new(0, 122, 0, 48), UDim2.new(0, 368, 0, 12))
+
+-- แถวที่ 2
+local btnSkybox = createButton("Skybox", "Skybox", UDim2.new(0, 84, 0, 26), UDim2.new(0, 10, 0, 66))
+local btnSpin = createButton("Spin", "spin", UDim2.new(0, 52, 0, 26), UDim2.new(0, 102, 0, 66))
+local btnBtools = createButton("Btools", "Btools", UDim2.new(0, 62, 0, 26), UDim2.new(0, 162, 0, 66))
+local btnAvatarAll = createButton("AvatarAll", "Avatar all", UDim2.new(0, 92, 0, 26), UDim2.new(0, 232, 0, 66))
+local btnSpeed4 = createButton("Speed4", "speed 4", UDim2.new(0, 78, 0, 26), UDim2.new(0, 332, 0, 66))
+
+-- แถวที่ 3
+local btnMsg1 = createButton("Msg1", "message 1", UDim2.new(0, 100, 0, 26), UDim2.new(0, 10, 0, 100))
+local btnMsg2 = createButton("Msg2", "message 2", UDim2.new(0, 100, 0, 26), UDim2.new(0, 118, 0, 100))
+local btnHint = createButton("Hint", "Hint", UDim2.new(0, 46, 0, 26), UDim2.new(0, 226, 0, 100))
+local btnK00p = createButton("K00p", "k00pkidds v8", UDim2.new(0, 126, 0, 26), UDim2.new(0, 280, 0, 100))
+
+-- แถวที่ 4
+local btnPolaria = createButton("Polaria", "Polaria", UDim2.new(0, 66, 0, 26), UDim2.new(0, 10, 0, 134))
+local btnSpinMe = createButton("SpinMe", "spin me", UDim2.new(0, 72, 0, 26), UDim2.new(0, 84, 0, 134))
+local btnC00lkid = createButton("C00lkid", "c00lkid", UDim2.new(0, 72, 0, 26), UDim2.new(0, 164, 0, 134))
+local btnDisco = createButton("Disco", "disco", UDim2.new(0, 52, 0, 26), UDim2.new(0, 244, 0, 134))
+local btnTpAll = createButton("TpAll", "Tp all", UDim2.new(0, 50, 0, 26), UDim2.new(0, 304, 0, 134))
+
+-- ปุ่ม Realm (ปุ่มใหญ่ด้านซ้ายล่าง)
+local btnRealm = createButton("Realm", "Realm", UDim2.new(0, 185, 0, 62), UDim2.new(0, 12, 0, 172))
+btnRealm.TextSize = 36
+
+-- ปุ่มฝั่งขวาล่าง (กลุ่มเพลง)
+local btnMusic1 = createButton("Music1", "music 1", UDim2.new(0, 106, 0, 30), UDim2.new(0, 212, 0, 172))
+local btnMusic2 = createButton("Music2", "music 2", UDim2.new(0, 106, 0, 30), UDim2.new(0, 212, 0, 210))
+
+-- ปุ่มแถวล่างสุด
+local btnVol999 = createButton("Vol999", "volume 999", UDim2.new(0, 132, 0, 26), UDim2.new(0, 124, 0, 252))
+local btnPitch03 = createButton("Pitch03", "pitch 0.3", UDim2.new(0, 96, 0, 26), UDim2.new(0, 264, 0, 252))
+
+-- ==========================================
+-- ฟังก์ชันการทำงานของปุ่ม
+-- ==========================================
+
+-- ฟังก์ชันส่งข้อความแชทไปที่ Server
+local function sendChat(message)
+	local textChatService = game:GetService("TextChatService")
+	if textChatService.ChatVersion == Enum.ChatVersion.TextChatService then
+		local channels = textChatService:WaitForChild("TextChannels", 5)
+		local general = channels and channels:FindFirstChild("RBXGeneral")
+		if general then
+			general:SendAsync(message)
+		end
+	else
+		game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(message, "All")
+	end
+end
+
+-- 1. สคริปต์ Skybox
+btnSkybox.MouseButton1Click:Connect(function()
+	local me = game.Players.LocalPlayer
+	local root = me.Character and me.Character:FindFirstChild('HumanoidRootPart')
+	if root then root.Anchored = true end
+	local offset = Vector3.new(0, 0, 0)
+	local origin = CFrame.new()
+	local tool
+	for _,v in ipairs(me:GetDescendants()) do if v.Name == 'SyncAPI' then tool = v.Parent break end end
+	if not tool then for _,v in ipairs(game.ReplicatedStorage:GetDescendants()) do if v.Name == 'SyncAPI' then tool = v.Parent break end end end
+	if not tool then warn('yo ur not have f3x') return end
+	local syncApi = tool:FindFirstChild('SyncAPI')
+	local remote = syncApi and syncApi:FindFirstChild('ServerEndpoint')
+	if not remote then warn('no server endpoint found') return end
+	local function _(args)
+		if not remote then return end
+		if remote:IsA('RemoteEvent') then
+			pcall(remote.FireServer, remote, unpack(args))
+		else
+			task.spawn(pcall, remote.InvokeServer, remote, unpack(args))
+		end
+	end
+	function CreatePart(partType, cf, parent)
+		if not remote then return nil end
+		local worldCF = (origin + offset) * cf
+		local success, part = pcall(function() return remote:InvokeServer('CreatePart', partType, worldCF, parent) end)
+		return success and part or nil
+	end
+	function MovePart(part, cf) if not part then return end local worldCF = (origin + offset) * cf _({'SyncMove', {{['Part'] = part, ['CFrame'] = worldCF}}}) end
+	function Resize(part, size, cf) if not part then return end local worldCF = (origin + offset) * cf _({'SyncResize', {{['Part'] = part, ['CFrame'] = worldCF, ['Size'] = size}}}) end
+	function SetTrans(part, int) if not part then return end _({'SyncMaterial', {{['Part'] = part, ['Transparency'] = int}}}) end
+	function Setmate(part, int) if not part then return end _({'SyncMaterial', {{['Part'] = part, ['Material'] = int}}}) end
+	function Color(part, color) if not part then return end _({'SyncColor', {{['Part'] = part, ['Color'] = color, ['UnionColoring'] = false}}}) end
+	function SetAnchor(boolean, part) if not part then return end _({'SyncAnchor', {{['Part'] = part, ['Anchored'] = boolean}}}) end
+	function SetCollision(part, boolean) if not part then return end _({'SyncCollision', {{['Part'] = part, ['CanCollide'] = boolean}}}) end
+	function AddMesh(part) if not part then return end _({'CreateMeshes', {{['Part'] = part}}}) end
+	function SetMesh(part, meshid) if not part then return end _({'SyncMesh', {{['Part'] = part, ['MeshId'] = 'rbxassetid://' .. meshid}}}) end
+	function SpawnDecal(part, side) if not part then return end _({'CreateTextures', {{['Part'] = part, ['Face'] = side, ['TextureType'] = 'Decal'}}}) end
+	function AddDecal(part, asset, side) if not part then return end _({'SyncTexture', {{['Part'] = part, ['Face'] = side, ['TextureType'] = 'Decal', ['Texture'] = 'rbxassetid://' .. asset}}}) end
+	function MeshResize(part, size) if not part then return end _({'SyncMesh', {{['Part'] = part, ['Scale'] = size}}}) end
+	function SetName(part, stringg) if not part then return end _({'SetName', {part}, stringg}) end
+	function vect(part, of) if not part then return end _({'SyncMesh', {{['Part'] = part, ['Offset'] = of}}}) end
+	function reflect(part, int) if not part then return end _({'SyncMaterial', {{['Part'] = part, ['Reflectance'] = int}}}) end
+	function SetMeshtype(part, type) if not part then return end _({'SyncMesh', {{['Part'] = part, ['MeshType'] = type}}}) end
+	local generatedParts = {}
+	task.wait(0.1)
+	local resizes = {}
+	local colors = {}
+	local materials = {}
+	local anchors = {}
+	local collisions = {}
+	local names = {}
+	task.wait(0.1)
+	task.spawn(function() pcall(function() generatedParts[1] = CreatePart("Normal", CFrame.new(329.649, 6.840, 68.036, -0.500, 0.000, -0.866, 0.000, 1.000, 0.000, 0.866, 0.000, -0.500), workspace) end) end)
+	local maxWait = 3.0
+	local start = os.clock()
+	while os.clock() - start < maxWait do
+		local completed = true
+		for i = 1, 1 do
+			if not generatedParts[i] then
+				completed = false
+				break
+			end
+		end
+		if completed then break end
+		task.wait(0.05)
+	end
+	if generatedParts[1] then
+		table.insert(resizes, {['Part'] = generatedParts[1], ['CFrame'] = (origin + offset) * CFrame.new(329.649, 6.840, 68.036, -0.500, 0.000, -0.866, 0.000, 1.000, 0.000, 0.866, 0.000, -0.500), ['Size'] = Vector3.new(4.000, 1.000, 2.000)})
+		table.insert(colors, {['Part'] = generatedParts[1], ['Color'] = Color3.new(0.639, 0.635, 0.647), ['UnionColoring'] = false})
+		table.insert(materials, {['Part'] = generatedParts[1], ['Material'] = Enum.Material.Plastic, ['Transparency'] = 0.000, ['Reflectance'] = 0.000})
+		table.insert(anchors, {['Part'] = generatedParts[1], ['Anchored'] = true})
+		table.insert(collisions, {['Part'] = generatedParts[1], ['CanCollide'] = false})
+		table.insert(names, {['Part'] = generatedParts[1], ['Name'] = "Sky"})
+	end
+	task.wait(0.1)
+	pcall(function() _({'SyncResize', resizes}) end)
+	task.wait(0.35)
+	pcall(function() _({'SyncColor', colors}) end)
+	task.wait(0.35)
+	pcall(function() _({'SyncMaterial', materials}) end)
+	task.wait(0.35)
+	pcall(function() _({'SyncAnchor', anchors}) end)
+	task.wait(0.35)
+	pcall(function() _({'SyncCollision', collisions}) end)
+	task.wait(0.35)
+	for _, v in ipairs(names) do if v.Part then pcall(function() _({'SetName', {v.Part}, v.Name}) end) end end
+	if generatedParts[1] then
+		pcall(function() AddMesh(generatedParts[1]) end)
+		task.wait(0.15)
+		pcall(function() SetMesh(generatedParts[1], "8006679977") end)
+		pcall(function() MeshResize(generatedParts[1], Vector3.new(90.000, 90.000, 90.000)) end)
+		pcall(function() vect(generatedParts[1], Vector3.new(0.000, 0.000, 0.000)) end)
+		pcall(function() SpawnDecal(generatedParts[1], Enum.NormalId.Front) end)
+		task.wait(0.15)
+		pcall(function() AddDecal(generatedParts[1], "91263660253748", Enum.NormalId.Front) end)
+	end
+	if root then root.Anchored = false end
+end)
+
+-- 2. สคริปต์ Realm
+btnRealm.MouseButton1Click:Connect(function()
+	local me = game.Players.LocalPlayer
+	local root = me.Character and me.Character:FindFirstChild('HumanoidRootPart')
+	if root then root.Anchored = true end
+	local offset = Vector3.new(0, 0, 0)
+	local origin = CFrame.new()
+	local tool
+	for _,v in ipairs(me:GetDescendants()) do if v.Name == 'SyncAPI' then tool = v.Parent break end end
+	if not tool then for _,v in ipairs(game.ReplicatedStorage:GetDescendants()) do if v.Name == 'SyncAPI' then tool = v.Parent break end end end
+	if not tool then warn('yo ur not have f3x') return end
+	local syncApi = tool:FindFirstChild('SyncAPI')
+	local remote = syncApi and syncApi:FindFirstChild('ServerEndpoint')
+	if not remote then warn('no server endpoint found') return end
+	local function _(args)
+		if not remote then return end
+		if remote:IsA('RemoteEvent') then
+			pcall(remote.FireServer, remote, unpack(args))
+		else
+			task.spawn(pcall, remote.InvokeServer, remote, unpack(args))
+		end
+	end
+	function CreatePart(partType, cf, parent)
+		if not remote then return nil end
+		local worldCF = (origin + offset) * cf
+		local success, part = pcall(function() return remote:InvokeServer('CreatePart', partType, worldCF, parent) end)
+		return success and part or nil
+	end
+	function MovePart(part, cf) if not part then return end local worldCF = (origin + offset) * cf _({'SyncMove', {{['Part'] = part, ['CFrame'] = worldCF}}}) end
+	function Resize(part, size, cf) if not part then return end local worldCF = (origin + offset) * cf _({'SyncResize', {{['Part'] = part, ['CFrame'] = worldCF, ['Size'] = size}}}) end
+	function SetTrans(part, int) if not part then return end _({'SyncMaterial', {{['Part'] = part, ['Transparency'] = int}}}) end
+	function Setmate(part, int) if not part then return end _({'SyncMaterial', {{['Part'] = part, ['Material'] = int}}}) end
+	function Color(part, color) if not part then return end _({'SyncColor', {{['Part'] = part, ['Color'] = color, ['UnionColoring'] = false}}}) end
+	function SetAnchor(boolean, part) if not part then return end _({'SyncAnchor', {{['Part'] = part, ['Anchored'] = boolean}}}) end
+	function SetCollision(part, boolean) if not part then return end _({'SyncCollision', {{['Part'] = part, ['CanCollide'] = boolean}}}) end
+	function AddMesh(part) if not part then return end _({'CreateMeshes', {{['Part'] = part}}}) end
+	function SetMesh(part, meshid) if not part then return end _({'SyncMesh', {{['Part'] = part, ['MeshId'] = 'rbxassetid://' .. meshid}}}) end
+	function SpawnDecal(part, side) if not part then return end _({'CreateTextures', {{['Part'] = part, ['Face'] = side, ['TextureType'] = 'Decal'}}}) end
+	function AddDecal(part, asset, side) if not part then return end _({'SyncTexture', {{['Part'] = part, ['Face'] = side, ['TextureType'] = 'Decal', ['Texture'] = 'rbxassetid://' .. asset}}}) end
+	function MeshResize(part, size) if not part then return end _({'SyncMesh', {{['Part'] = part, ['Scale'] = size}}}) end
+	function SetName(part, stringg) if not part then return end _({'SetName', {part}, stringg}) end
+	function vect(part, of) if not part then return end _({'SyncMesh', {{['Part'] = part, ['Offset'] = of}}}) end
+	function reflect(part, int) if not part then return end _({'SyncMaterial', {{['Part'] = part, ['Reflectance'] = int}}}) end
+	function SetMeshtype(part, type) if not part then return end _({'SyncMesh', {{['Part'] = part, ['MeshType'] = type}}}) end
+	local generatedParts = {}
+	task.wait(0.1)
+	local hdSignals = game:GetService('ReplicatedStorage'):FindFirstChild('HDAdminClient') and game:GetService('ReplicatedStorage').HDAdminClient:FindFirstChild('Signals')
+	local hdRemote = hdSignals and hdSignals:FindFirstChild('RequestCommand')
+	if hdRemote then
+		pcall(function() hdRemote:InvokeServer(';time 14.00') end)
+		pcall(function() hdRemote:InvokeServer(';fog 100000') end)
+		pcall(function() hdRemote:InvokeServer(';fogcolor 192 192 192') end)
+	end
+	local partsToDelete = {}
+	for _, v in ipairs(workspace:GetDescendants()) do
+		if v:IsA('BasePart') and v.Name ~= 'Terrain' then
+			local isPlrPart = false
+			for _, p in ipairs(game.Players:GetPlayers()) do
+				if p.Character and v:IsDescendantOf(p.Character) then
+					isPlrPart = true
+					break
+				end
+			end
+			if not isPlrPart then
+				table.insert(partsToDelete, v)
+			end
+		end
+	end
+	if #partsToDelete > 0 then
+		pcall(function() _({'Remove', partsToDelete}) end)
+	end
+	task.wait(0.5)
+	local resizes = {}
+	local colors = {}
+	local materials = {}
+	local anchors = {}
+	local collisions = {}
+	local names = {}
+	task.wait(0.1)
+	task.spawn(function() pcall(function() generatedParts[1] = CreatePart("Normal", CFrame.new(148.643, 18.500, -36.140, 1.000, 0.000, 0.000, 0.000, 1.000, 0.000, 0.000, 0.000, 1.000), workspace) end) end)
+	task.spawn(function() pcall(function() generatedParts[2] = CreatePart("Spawn", CFrame.new(-6.518, 37.500, -37.106, 0.000, 0.000, 1.000, 0.000, 1.000, 0.000, -1.000, 0.000, 0.000), workspace) end) end)
+	task.spawn(function() pcall(function() generatedParts[3] = CreatePart("Normal", CFrame.new(183.143, 60.000, -34.640, 1.000, 0.000, 0.000, 0.000, 1.000, 0.000, 0.000, 0.000, 1.000), workspace) end) end)
+	task.spawn(function() pcall(function() generatedParts[4] = CreatePart("Normal", CFrame.new(158.143, 98.375, -35.987, 1.000, 0.000, 0.000, 0.000, 1.000, 0.000, 0.000, 0.000, 1.000), workspace) end) end)
+	task.spawn(function() pcall(function() generatedParts[5] = CreatePart("Normal", CFrame.new(134.143, 70.283, -34.882, 1.000, 0.000, 0.000, 0.000, 1.000, 0.000, 0.000, 0.000, 1.000), workspace) end) end)
+	task.spawn(function() pcall(function() generatedParts[6] = CreatePart("Normal", CFrame.new(182.643, 50.500, -34.640, 1.000, 0.000, 0.000, 0.000, 1.000, 0.000, 0.000, 0.000, 1.000), workspace) end) end)
+	task.spawn(function() pcall(function() generatedParts[7] = CreatePart("Normal", CFrame.new(56.569, 50.500, 18.683, 0.000, -1.000, 0.000, 1.000, 0.000, 0.000, 0.000, 0.000, 1.000), workspace) end) end)
+	local maxWait = 3.0
+	local start = os.clock()
+	while os.clock() - start < maxWait do
+		local completed = true
+		for i = 1, 7 do
+			if not generatedParts[i] then
+				completed = false
+				break
+			end
+		end
+		if completed then break end
+		task.wait(0.05)
+	end
+	if generatedParts[1] then
+		table.insert(resizes, {['Part'] = generatedParts[1], ['CFrame'] = (origin + offset) * CFrame.new(148.643, 18.500, -36.140, 1.000, 0.000, 0.000, 0.000, 1.000, 0.000, 0.000, 0.000, 1.000), ['Size'] = Vector3.new(377.000, 38.000, 198.000)})
+		table.insert(colors, {['Part'] = generatedParts[1], ['Color'] = Color3.new(0.373, 0.373, 0.373), ['UnionColoring'] = false})
+		table.insert(materials, {['Part'] = generatedParts[1], ['Material'] = Enum.Material.Concrete, ['Transparency'] = 0.000, ['Reflectance'] = 0.000})
+		table.insert(anchors, {['Part'] = generatedParts[1], ['Anchored'] = true})
+		table.insert(collisions, {['Part'] = generatedParts[1], ['CanCollide'] = true})
+		table.insert(names, {['Part'] = generatedParts[1], ['Name'] = "Part"})
+	end
+	if generatedParts[2] then
+		table.insert(resizes, {['Part'] = generatedParts[2], ['CFrame'] = (origin + offset) * CFrame.new(-6.518, 37.500, -37.106, 0.000, 0.000, 1.000, 0.000, 1.000, 0.000, -1.000, 0.000, 0.000), ['Size'] = Vector3.new(50.000, 1.000, 41.000)})
+		table.insert(colors, {['Part'] = generatedParts[2], ['Color'] = Color3.new(0.624, 0.624, 0.631), ['UnionColoring'] = false})
+		table.insert(materials, {['Part'] = generatedParts[2], ['Material'] = Enum.Material.Plastic, ['Transparency'] = 0.000, ['Reflectance'] = 0.000})
+		table.insert(anchors, {['Part'] = generatedParts[2], ['Anchored'] = true})
+		table.insert(collisions, {['Part'] = generatedParts[2], ['CanCollide'] = true})
+		table.insert(names, {['Part'] = generatedParts[2], ['Name'] = "SpawnLocation"})
+	end
+	if generatedParts[3] then
+		table.insert(resizes, {['Part'] = generatedParts[3], ['CFrame'] = (origin + offset) * CFrame.new(183.143, 60.000, -34.640, 1.000, 0.000, 0.000, 0.000, 1.000, 0.000, 0.000, 0.000, 1.000), ['Size'] = Vector3.new(98.000, 45.000, 122.000)})
+		table.insert(colors, {['Part'] = generatedParts[3], ['Color'] = Color3.new(0.106, 0.165, 0.208), ['UnionColoring'] = false})
+		tabl
